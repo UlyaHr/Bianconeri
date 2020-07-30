@@ -1,17 +1,17 @@
 body {
-    background-color: #000;
+    background-color: #fff;
 }
 
 .body-content {
     min-height: calc(100vh - 224px);
     margin-top: 50px;
-    color: #fff;
+    color: #1f1b1b;
 }
 
 nav {
-    background: #0e0e1f;
-    border-radius: 0 0 40px 40px;
-    box-shadow: inset 0 -8px 24px -16px #fff;
+    background: #1f1b1b;
+    box-shadow: 0 5px 0 #E9536B;
+    z-index: 99;
 }
 
 nav .nav-wrapper .brand-logo img {
@@ -20,18 +20,22 @@ nav .nav-wrapper .brand-logo img {
     top: 4px;
 }
 
-#nav-mobile {
-    background-image: url(../assets/image/navbar-bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    box-shadow: inset 0 -20px 100px 20px #0e0e1f;
+.sidenav-trigger {
+    font-size: 24px;
 }
+
+#nav-mobile {
+    background-image: url(../assets/icon/logo-192.png);
+    background-repeat: no-repeat;
+    background-position: center 60%;
+    background-color: #1f1b1b;
+}
+
+
 #nav-mobile li {
-    background: #000000ab;
-    box-shadow: inset 0 0 20px 0 #655673;
-    border-radius: 10px;
-    width: 95%;
+    background-color: #e9536b;
+    border-radius: 6px;
+    width: 90%;
     margin: 15px auto 0 auto;
 }
 
@@ -39,15 +43,17 @@ nav .nav-wrapper .brand-logo img {
 .topnav li a {
     color: #fff;
 }
-.sidenav-img img {
+
+/*! .sidenav-img img {
     width: 80%;
     position: relative;
     left: 10%;
     top: 20px;
     border-radius: 2em;
     margin-bottom: 3em;
-}
-.img-cover {
+} */
+
+/* .img-cover {
     position: absolute;
     width: 80%;
     height: 160px;
@@ -55,7 +61,7 @@ nav .nav-wrapper .brand-logo img {
     left: 10%;
     background: #000;
     opacity: 0.5;
-}
+} */
 
 .error-api h1,.error-api h2 {
     font-size: 36px;
@@ -78,42 +84,45 @@ nav .nav-wrapper .brand-logo img {
 
 .img-parallax {
     position: relative;
-    top: -50px;
+    top: -45px;
     background-image: url("../assets/image/hero.jpg");
     height: calc(100vh - 50px);
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.parallax-shadow {
+.parallax-accent {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 50px);
     position: absolute;
     background: #000;
     opacity: 0.5;
-    top: 64px;
+    top: 69px;
 }
 .banner-text {
     width: 85%;
-    color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .banner-text h1 {
-    margin: 0 0 24px 0;
+    color: #fff;
+    margin: 0 0 20px 0;
 }
-.banner-text p {
-    margin: 10px 0;
+.banner-text h4 {
+    color: #fff;
+    margin: 0 0 40px 0;
+}
+.banner-text .btn-small {
+    background-color: #e9536b;
 }
 .banner-text i {
-    font-size: 48px;
-    margin-right: 16px;
+    font-size: 24px;
+    margin-right: 8px;
 }
 .banner-text a {
-    color: inherit;
+    color: #fff;
 }
 
 .club-info h1,
@@ -125,15 +134,20 @@ nav .nav-wrapper .brand-logo img {
     border-bottom: 1px solid #333;
 }
 .club-info table tr td:first-child {
-    color: #888;
+    color: #6c6c6c;
     width: 35%;
 }
 .club-info table tr td:last-child {
     font-weight: 600;
 }
 .club-info table tr td a {
-    color: #ae87ff;
+    color: #e9536b;
     text-decoration: underline;
+}
+.club-info p {
+    margin-top: 10px;
+    text-align: right;
+    font-style: italic ;
 }
 
 .coach .card-image img {
@@ -386,19 +400,21 @@ nav .nav-wrapper .brand-logo img {
 }
 
 footer {
+    width: 100%;
+    height: auto;
     text-align: center;
     margin-top: 80px;
     color: #fff;
+    background-color: #1f1b1b;
+    box-shadow: 0 -5px 0 #e9536b;
 }
 footer p {
     padding: 9px 20px;
-    width: max-content;
     margin: 0 auto;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 4px 24px -6px #842ed2;
+    line-height: 50px;
 }
 footer span {
-    color: red;
+    color: #e9536b;
     margin: 0 5px;
 }
 
@@ -418,26 +434,26 @@ footer span {
         width: 275px;
     }
 
-    .parallax-shadow {
-        top: 56px;
+    .parallax-accent {
+        top: 61px;
     }
+
     .banner-text {
         text-align: center;
     }
+
     .banner-text .col:first-child {
         display: none;
     }
+
     .banner-text h1 {
-        font-size: 36px;
+        font-size: 50px;
         font-weight: 600;
         margin-bottom: 16px;
     }
+
     .banner-text p {
         margin-bottom: 36px;
-    }
-    .banner-text i {
-        font-size: 48px;
-        margin: 0 16px;
     }
 
     .club-info .collection .col.s9 span {

@@ -1,17 +1,13 @@
 export function setHomePage(info) {
   const element = /*html*/ `
 		<div class="img-parallax"></div>
-		<div class="parallax-shadow"></div>
+		<div class="parallax-accent"></div>
 		<div class="container">
 			<div class="banner-text center">
-				<h1>${info.name}</h1>
-				<p class="flow-text">${info.address}, ${info.area.name}</p>
-				<a href="${info.website}" target="_blank" rel="noopener noreferrer">
-					<i class="material-icons">explore</i>
-				</a>
-				<a href="mailto:${info.email}">
-					<i class="material-icons">email</i>
-				</a>
+				<h1>Bianconeri</h1>
+				<h4 class="flow-text">Companion app for ${info.name} fans</h4>
+				<a href="${info.website}" target="_blank" rel="noopener noreferrer" class="waves-effect waves-light btn-small"><i class="material-icons left">language</i>Website</a>
+				<a href="mailto:${info.email}" class="waves-effect waves-light btn-small"><i class="material-icons left">email</i>Email</a>
 			</div>
 			<div class="club-info">
 				<h1>Detail Information</h1>
@@ -57,12 +53,9 @@ export function setHomePage(info) {
 								</a>
 							</td>
 						</tr>
-						<tr>
-							<td>Last Updated</td>
-							<td>${setDate(info.lastUpdated)}</td>
-						</tr>
 					</tbody>
 				</table>
+				<p>Last Updated: ${setDate(info.lastUpdated)}</p>
 			</div>
 		</div>
     `;
