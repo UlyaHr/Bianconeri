@@ -54,8 +54,8 @@ module.exports = {
               to: 'manifest.json',
             },
             {
-              from: './src/sw.js',
-              to: 'sw.js',
+              from: './src/serviceworker.js',
+              to: 'serviceworker.js',
             }
           ]
         }),

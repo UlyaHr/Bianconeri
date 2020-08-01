@@ -1,3 +1,4 @@
+import './js/runtime.js';
 import './js/sw-auth.js';
 import './js/api.js';
 import './js/db.js';
