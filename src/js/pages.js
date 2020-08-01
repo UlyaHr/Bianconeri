@@ -1,7 +1,6 @@
 export function setHomePage(info) {
   const element = /*html*/ `
-		<div class="img-parallax"></div>
-		<div class="parallax-accent"></div>
+		<div class="homepage-img"></div>
 		<div class="container">
 			<div class="banner-text center">
 				<h1>Bianconeri</h1>

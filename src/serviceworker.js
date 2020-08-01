@@ -39,14 +39,15 @@ let urlsToCache = [
 	'/assets/icon/xxxhdpi.png',
 	'/assets/icon/GooglePlayStore.png',
 	'/assets/icon/iOS.png',
-	'/assets/icon/up.png',
 	'/assets/image/404.png',
 	'/assets/image/coach.svg',
 	'/assets/image/hero.jpg',
+	'/assets/image/nav-logo.png',
 	'/assets/image/player.svg',
+	'/assets/image/side-logo.png',
 	'/assets/image/Serie A.png',
-	'/assets/image/UEFA Champions League.png'
-	
+	'/assets/image/UEFA Champions League.png',
+	'/assets/image/up.png'
 ];
 
 self.addEventListener('install', function (event) {
