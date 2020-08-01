@@ -267,8 +267,8 @@ export function showPreloader(id) {
 export function errApiLimit() {
   const element = /*html*/ `
     <div class="error-api container align-center">
-        <h1>Sorry, there's an api limitation!</h1>
-        <h2 class="red-text">Wait for a minute and try refresh this page again</h2>
+        <h1>Sorry, you've reach API limitation!</h1>
+        <h2 class="red-text">Wait for a sec and try refresh this page again</h2>
     </div>`;
 
   return (document.getElementById("bodyContent").innerHTML = element);
@@ -277,8 +277,8 @@ export function errApiLimit() {
 export function errDataOffline() {
   const element = /*html*/ `
     <div class="error-api container align-center">
-        <h1>Sorry, we don't have this data information yet!</h1>
-        <h2 class="red-text">You can grab the data while online!</h2>
+        <h1>Oh, seem like your connection is troubled.</h1>
+        <h2 class="red-text">You need internet connection to grab the data.</h2>
     </div>`;
 
   return (document.getElementById("bodyContent").innerHTML = element);

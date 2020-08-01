@@ -15,7 +15,7 @@ nav {
 }
 
 nav .nav-wrapper .brand-logo img {
-    width: 32px;
+    height: 32px;
     position: relative;
     top: 4px;
 }
@@ -25,7 +25,7 @@ nav .nav-wrapper .brand-logo img {
 }
 
 #nav-mobile {
-    background-image: url(../assets/icon/logo-192.png);
+    background-image: url(../assets/icon/xxhdpi.png);
     background-repeat: no-repeat;
     background-position: center 60%;
     background-color: #1f1b1b;
