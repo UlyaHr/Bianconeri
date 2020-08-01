@@ -1,32 +1,42 @@
-var webPush = require("web-push");
+const webPush = require('web-push');
 
-const vapidKeys = {
-  publicKey:
-    "BDlD_wxjgokN9TVJDdEyemsbknIwXxXUo_DTIxgFC7V9afJtzHXhvDPhRXpeXU-hEXwIxjE0cgKtzc2ErUcwQ-E",
-  privateKey:     "Xum8Zr_WZ1dKn_nI_PcNM1GPAcwQOG49sty6pcDOFOw",
-};
+try {
 
-webPush.setVapidDetails(
-  "mailto:ulhabib7@gmail.com",
-  vapidKeys.publicKey,
-  vapidKeys.privateKey
-);
+  const vapidKeys = {
+    "publicKey":
+    "BA7qzHENF4pLfwFGHIQKIgciaZm8s_rqqT4UFdawkMPrgam7YDfKPNVbb-XNOIKgrV6osqF6DtGHlKimXgg5pTo","privateKey":"I52YG6-VmmLbafcJTZRA6fbqx-Rx7sJz9OgBkTxBAK4"};
 
-var pushSubscription = {
-  endpoint:
-    "https://fcm.googleapis.com/fcm/send/fgEa6VFKcMI:APA91bGSE0iFccNDkx9AdiBUo6IzDbR6Cv7J1JFLhd2XkPYLE7jqv6rTA84gMYN7YtywaGNeWJx06Qf9r3dGsiEHdvqYts09caoswbnUSIbz4vXx3kezEYzhMKvz4Hw3MVNaFXkY_21t",
-  keys: {
-    p256dh:
-      "BLcX7sLcNSBogCwiEPDjl+ihyU+gz0tu54Pk2d1pOgwELsWQKa7zWQToPNc5BVboXcid9DC0ugmXivJ4lReyc3c=",
-    auth: "ol6wZE2FFxABdhZD7tVzVA==",
-  },
-};
+  webPush.setVapidDetails(
+      'mailto:ulhabib7@gmail.com',
+      vapidKeys.publicKey,
+      vapidKeys.privateKey
+  )
 
-var payload = "Test Push notification from server!";
+  const pushSubscription = {
+      "endpoint": "https://fcm.googleapis.com/fcm/send/dbcfppLEjKs:APA91bHYdFHSe9_XXyUqsXRrMzy0yVc3X8a6VV5l8BLiKPJxYCLVc0tuMK4QnptPQNyM-U_2Pr0JyO3x-deDbSKIcZBwCJWPHEKa4UI3sNzoIwuq51YKSXxDWruv1L9h5far9eTTpEdH",
+      "keys": {
+          "p256dh": "BHpHU5JmfenKVlIhDW0yPa8VGAFu//ZGWDnVrWXV9+kVjNVSO/JbYr3XoQAtXWAtrs/tuiLYfammaMMZOHQqABM=",
+          "auth": "2n2z2lqCjCQrrQIKVsVmgw=="
+      }
+  };
 
-var options = {
-  gcmAPIKey: "724689303004",
-  TTL: 60,
-};
+  const payload = 'New Standings has been updated!';
 
-webPush.sendNotification(pushSubscription, payload, options);
+  const options = {
+      gcmAPIKey: '724689303004',
+      TTL: 60
+  };
+
+  webPush.sendNotification(
+    pushSubscription,
+    payload,
+    options
+  ).then(res => {
+    console.debug(res)
+  }).catch(err => {
+    console.debug('Error: ', err.message)
+  });
+
+} catch (error) {
+  console.debug(error.message)
+}

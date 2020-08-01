@@ -50,7 +50,7 @@ function requestPermission() {
                     if (registration) {
                         registration.pushManager.subscribe({
                             userVisibleOnly: true,
-                            applicationServerKey: urlBase64ToUint8Array("BDlD_wxjgokN9TVJDdEyemsbknIwXxXUo_DTIxgFC7V9afJtzHXhvDPhRXpeXU-hEXwIxjE0cgKtzc2ErUcwQ-E")
+                            applicationServerKey: urlBase64ToUint8Array("BA7qzHENF4pLfwFGHIQKIgciaZm8s_rqqT4UFdawkMPrgam7YDfKPNVbb-XNOIKgrV6osqF6DtGHlKimXgg5pTo")
                         }).then(function(subscribe) {
                             const p256dh = btoa(String.fromCharCode.apply(null, new Uint8Array(subscribe.getKey('p256dh'))));
                             const authKey = btoa(String.fromCharCode.apply(null, new Uint8Array(subscribe.getKey('auth'))));
