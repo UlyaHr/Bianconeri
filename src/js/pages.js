@@ -67,11 +67,11 @@ export function setGroupSquad() {
     { id: "Goalkeeper", division: "GOALKEEPER" },
     { id: "Defender", division: "DEFENDER" },
     { id: "Midfielder", division: "MIDFIELDER" },
-    { id: "Attacker", division: "FORWARD" },
+    { id: "Attacker", division: "ATTACKER" },
   ];
 
   let group = /*html*/ `
-		<h1><i class="material-icons">chevron_right</i>COACH</h1>
+		<h1><i class="material-icons">account_circle</i>COACH</h1>
 		<div class="row">
 			<div class="col s12">
 				<a href="#player?id=10983">
@@ -87,7 +87,7 @@ export function setGroupSquad() {
 
   allSquad.forEach((dt) => {
     group += `
-			<h1><i class="material-icons">chevron_right</i>${dt.division}</h1>
+			<h1><i class="material-icons">account_circle</i>${dt.division}</h1>
 			<div class="row group" id="${dt.id}"></div>
 		`;
   });
@@ -113,8 +113,8 @@ export function setPlayerInfo(info) {
 		<div class="col s12 m6 l5">
 			${
         info.id === 10983
-          ? `<img id="coach-img" src="./assets/icon/coach.png" alt="img-player">`
-          : `<img src="./assets/icon/football-player.png" alt="img-player">`
+          ? `<img id="coach-img" src="./assets/image/coach.svg" alt="img-player">`
+          : `<img src="./assets/image/player.svg" alt="img-player">`
       }
 		</div>
 		<div class="col s12 m6 l7">
@@ -157,7 +157,8 @@ export function setPlayerInfo(info) {
 		</div>
 
 		<div class="waves-effect waves-light btn" id="btn-player">
-			Save as Your Favorite!
+			<i class="material-icons left">save</i>
+			Favorited
 		</div>
 	`;
   //! Show error or fetch result
@@ -285,23 +286,23 @@ export function errDataOffline() {
 
 export function showAddToFavoriteBtn(btn, name) {
   M.Toast.dismissAll();
-  btn.style.backgroundColor = "#B71C1C";
-  btn.innerText = "Delete from Favorite?";
+  btn.style.backgroundColor = "#4caf50";
+  btn.innerText = "Favorited!";
   M.toast({
-    inDuration: 100,
+    inDuration: 150,
     html: /*html*/ `
-		<span>Save <strong class="yellow-text">${name}</strong> as your favorite!</span>`,
+		<span><strong class="pink-text">${name}</strong> is added to Favorites!</span>`,
   });
 }
 
 export function showDeleteFavoriteBtn(btn, name) {
   M.Toast.dismissAll();
-  btn.style.backgroundColor = "#114875";
-  btn.innerText = "Save as Your Favorite!";
+  btn.style.backgroundColor = "#d32f2f";
+  btn.innerText = "Deleted!";
   M.toast({
-    inDuration: 100,
+    inDuration: 150,
     html: /*html*/ `
-		<span>Remove <strong class="yellow-text">${name}</strong> from your favorite!</span>`,
+		<span>Remove <strong class="pink-text">${name}</strong> from your Favorites!</span>`,
   });
 }
 
@@ -318,8 +319,8 @@ export function getUrlParam(param, url) {
 function errDataNotFound() {
   const element = /*html*/ `
     <div class="error-api container align-center">
-        <h1>Sorry, data not found!</h1>
-        <h2 class="red-text">Try other data resource</h2>
+        <h1>Sorry, cant found the data!</h1>
+        <h2 class="red-text">Try another resource</h2>
     </div>`;
 
   return (document.getElementById("bodyContent").innerHTML = element);
@@ -334,11 +335,11 @@ function setDate(val) {
 function setLeagueHeaderSection(data) {
   const element = /*html*/ `
 		<div class="card">
-			<div class="card-content white-text">
+			<div class="card-content grey-text text-darken-4">
 				<span class="card-title">${data.competition.name}</span>
 				<p>Last Updated: <span>${setDate(data.competition.lastUpdated)}</span></p>
 				<div class="waves-effect waves-light btn" id="btn-league">
-					Save as Your Favorite!
+					<i class="material-icons left">save</i>Favorited
 				</div>
 			</div>
 		</div>
@@ -351,11 +352,11 @@ function setLeagueHeaderSection(data) {
 
 function setRegularSeason(data) {
   data.table = /*html*/ `
-		<table class="responsive-table centered">
+		<table class="responsive-table striped centered">
 			<thead>
 				<tr>
-					<th>Position</th>
-					<th>Name</th>
+					<th>Rank</th>
+					<th>Club</th>
 					<th>Points</th>
 					<th>Won</th>
 					<th>Draw</th>
@@ -419,11 +420,11 @@ function setGroupLeagueDivision(each, data) {
   each += /*html*/ `
 		<div class="group-standing">
 			<h1>${data.group.replace("_", " ")}</h1>
-			<table class="responsive-table centered">
+			<table class="responsive-table centered striped">
 				<thead>
 					<tr>
-						<th>Position</th>
-						<th>Name</th>
+						<th>Rank</th>
+						<th>Club</th>
 						<th>Points</th>
 						<th>Won</th>
 						<th>Draw</th>

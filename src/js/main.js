@@ -110,8 +110,8 @@ export async function playerInfo() {
 		// get data from indexedDB
 		setPlayerInfo(isPlayerAvailableOnDB);
 		const btnConfirm = document.getElementById("btn-player");
-		btnConfirm.style.backgroundColor = "#B71C1C";
-		btnConfirm.innerText = "Delete from Favorite List?";
+		btnConfirm.style.backgroundColor = "#d32f2f";
+		btnConfirm.innerHTML = "<i class='material-icons left'>delete</i>";
 		btnConfirm.onclick = () => {
 			deleteFavPlayer(isPlayerAvailableOnDB);
 			showDeleteFavoriteBtn(btnConfirm, isPlayerAvailableOnDB.name);
@@ -163,8 +163,8 @@ export async function leagueInfo() {
 		// get data from indexedDB
 		setLeagueInfo(isLeagueAvailableOnDB);
 		const btnConfirm = document.getElementById("btn-league");
-		btnConfirm.style.backgroundColor = "#B71C1C";
-		btnConfirm.innerText = "Delete from Favorite List?";
+		btnConfirm.style.backgroundColor = "#d32f2f";
+		btnConfirm.innerHTML = "<i class='material-icons left'>delete</i>Delete";
 		btnConfirm.onclick = () => {
 			deleteFavLeague(isLeagueAvailableOnDB);
 			showDeleteFavoriteBtn(btnConfirm, isLeagueAvailableOnDB.competition.name);
@@ -210,8 +210,8 @@ export function getFavorites() {
 			players.forEach((player) => playersHTML = setSquad(playersHTML, player));
 		} else {
 			playersHTML = `
-				<h3>You haven't favorited any player yet?</h3>
-				<a href="#team"><p class="yellow-text center">Search Player</p></a>
+				<h3>No player added to favorite yet.</h3>
+				<a href="#team"><p class="pink-text center">Choose Player here</p></a>
 			`;
 		}
 		
@@ -225,8 +225,8 @@ export function getFavorites() {
 			leagueHTML = setAllLeagueInfo(leagues, true);
 		} else {
 			leagueHTML = `
-				<h3>You haven't favorited any league yet?</h3>
-				<a href="#competition"><p class="yellow-text center">Search League</p></a>
+				<h3>No league added to Favorite yet.</h3>
+				<a href="#competition"><p class="pink-text center">Search League</p></a>
 			`;
 			document.getElementById("favLeague").innerHTML = leagueHTML;
 		}

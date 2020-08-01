@@ -18,7 +18,7 @@ let urlsToCache = [
 
 	//? css files
 	'/css/materialize.min.css',
-	'/css/style.css',
+	// '/css/style.css',
 
 	//? js files
 	'/js/api.js',
@@ -31,8 +31,6 @@ let urlsToCache = [
 	'/js/pages.js',
 
 	//? assets files
-	'assets/icon/coach.png',
-	'assets/icon/football-player.png',
 	'assets/icon/logo-32.png',
 	'assets/icon/logo-128.png',
 	'assets/icon/logo-144.png',
@@ -40,6 +38,8 @@ let urlsToCache = [
 	'assets/icon/logo-512.png',
 	'assets/icon/up.png',
 	'assets/image/404.png',
+	'assets/image/coach.svg',
+	'assets/imgae/player.svg',
 	'assets/image/hero.jpg',
 	'assets/image/navbar-bg.jpg',
 	'assets/image/Serie A.png',

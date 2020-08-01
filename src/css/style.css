@@ -44,24 +44,9 @@ nav .nav-wrapper .brand-logo img {
     color: #fff;
 }
 
-/*! .sidenav-img img {
-    width: 80%;
-    position: relative;
-    left: 10%;
-    top: 20px;
-    border-radius: 2em;
-    margin-bottom: 3em;
-} */
-
-/* .img-cover {
-    position: absolute;
-    width: 80%;
-    height: 160px;
-    top: 20px;
-    left: 10%;
-    background: #000;
-    opacity: 0.5;
-} */
+.topnav li a:hover {
+    background-color: #e9536b;
+}
 
 .error-api h1,.error-api h2 {
     font-size: 36px;
@@ -154,59 +139,64 @@ nav .nav-wrapper .brand-logo img {
     left: 30%;
     width: 90%;
 }
+
 #coach-img {
     width: 60% !important;
 }
 
 .squad,
-#bookmark-player {
-    color: #fff;
+#favorite-player {
+    color: #1f1b1b;
 }
+
 .squad h1,
-#bookmark-player h1 {
+#favorite-player h1 {
     font-size: 36px;
     margin: 10px 0 24px;
 }
 .squad .card,
-#bookmark-player .card {
+#favorite-player .card {
     overflow: hidden;
-    color: #fff;
     position: relative;
     width: 100%;
     padding: 16px 24px;
-    background: transparent;
-    border-radius: 10px;
-    box-shadow: inset 0 0 36px 0 #ae9dff;
+    background-color: #1f1b1b;
+    border-radius: 5px;
+    margin: 7px 0;
+    text-align: center;
+    border-left: 5px solid #e9536b;
+    border-right: 5px solid #e9536b;
 }
 .squad .card .card-title,
-#bookmark-player .card .card-title {
+#favorite-player .card .card-title {
     line-height: 20px;
     margin: 0;
-    color: yellow;
-    font-size: 16px;
+    color: #eee;
+    font-size: 15px;
+    font-weight: 500;
 }
 .squad .card h2,
-#bookmark-player .card h2 {
+#favorite-player .card h2 {
     position: absolute;
     bottom: -8%;
     right: 10%;
     color: #2f2b2b;
 }
 .squad .card i,
-#bookmark-player .card i {
+#favorite-player .card i {
     color: white;
     margin: 0;
     position: absolute;
     top: 8px;
 }
 .squad .info i,
-#bookmark-player .info i {
+#favorite-player .info i {
     right: 10%;
     transform: translate(-10%, 8px);
 }
 
 #team-squad h1 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 36px;
     margin: 36px 0 10px;
@@ -214,6 +204,8 @@ nav .nav-wrapper .brand-logo img {
 #team-squad h1 i {
     position: relative;
     top: 5px;
+    color: #E9536B;
+    margin-right: 5px;
 }
 
 #player-info {
@@ -223,7 +215,7 @@ nav .nav-wrapper .brand-logo img {
     margin-top: 36px;
     text-transform: inherit;
     border-radius: 16px;
-    background-color: #114875;
+    background-color: #4caf50;
 }
 #player-info .col {
     margin-bottom: 24px;
@@ -244,9 +236,10 @@ nav .nav-wrapper .brand-logo img {
 }
 #player-info table tr td:first-child {
     width: 40%;
+    color: #1f1b1b;
 }
 #player-info table tr td:last-child {
-    color: yellow;
+    color: #e9536b;
     font-weight: 600;
 }
 
@@ -260,13 +253,15 @@ nav .nav-wrapper .brand-logo img {
     margin-top: 24px;
     text-transform: inherit;
     border-radius: 16px;
-    background-color: #114875;
+    line-height: 36px;
+    background-color: #4caf50;
 }
 #league-info table {
-    box-shadow: inset 0 0 50px -5px #4b2c73;
-    border-radius: 20px;
+    border-radius: 6px;
     padding: 8px 16px;
     margin-bottom: 36px;
+    background-color: #1f1b1b;
+    color: #eee;
 }
 #league-info table thead tr th:nth-child(2),
 #league-info table tbody tr td:nth-child(2)
@@ -275,8 +270,8 @@ nav .nav-wrapper .brand-logo img {
 }
 
 #league-info .card {
-    background-color: transparent;
     position: relative;
+    box-shadow: none;
 }
 #league-info .card .card-content {
     padding: 16px 0;
@@ -306,14 +301,14 @@ nav .nav-wrapper .brand-logo img {
     color: #888;
 }
 #league-info .card .card-content p span {
-    color: #fff;
+    color: #888;
     margin-left: 5px;
 }
 #league-standing .group-standing h1 {
     margin: 10px 0;
     font-size: 24px;
     font-weight: 600;
-    color: mediumpurple;
+    color: #e9536b;
 }
 
 .all-competition h1 {
@@ -323,34 +318,32 @@ nav .nav-wrapper .brand-logo img {
     margin-bottom: 36px;
 }
 #competition-info .collection,
-#bookmarkLeague .collection {
-    margin-bottom: 36px;
-    border: 0;
+#favLeague .collection {
+    background-color: #1f1b1b;
+    border-radius: 5px;
 }
 #competition-info .collection .collection-item,
-#bookmarkLeague .collection .collection-item {
+#favLeague .collection .collection-item {
     background-color: transparent;
     position: relative;
-    border-bottom: 1px solid #333;
-    padding: 24px 0;
+    border-bottom: 5px solid #e9536b;
+    padding: 18px 12px;
 }
 #competition-info .collection .collection-item a,
-#bookmarkLeague .collection .collection-item a {
-    color: inherit;
+#favLeague .collection .collection-item a {
+    color: #eee;
 }
 #competition-info .collection img,
-#bookmarkLeague .collection img {
+#favLeague .collection img {
     width: 100%;
 }
 #competition-info .collection .row .col:first-child,
-#bookmarkLeague .collection .row .col:first-child {
+#favLeague .collection .row .col:first-child {
     background: #fff;
-    padding: 5px 10px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 15px 5px #000;
+    border-radius: 6px;
 }
 #competition-info .collection .col.s9 span,
-#bookmarkLeague .collection .col.s9 span {
+#favLeague .collection .col.s9 span {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -372,10 +365,9 @@ nav .nav-wrapper .brand-logo img {
 }
 
 .toast {
-    background-color: #000;
-    box-shadow: inset 0 0 25px -5px #655673;
+    background-color: #1f1b1b;
+    box-shadow: -5px 0 0 #e9536b;
 }
-
 
 .scrollTop {
     width: 36px;
@@ -470,35 +462,35 @@ footer span {
     }
 
     .squad .card-image img,
-    #bookmark-player .card-image img {
+    #favorite-player .card-image img {
         width: 100px;
     }
     .squad .card,
-    #bookmark-player .card {
+    #favorite-player .card {
         padding: 12px 24px;
     }
     .squad .card-image,
-    #bookmark-player .card-image {
+    #favorite-player .card-image {
         position: absolute;
         width: 65%;
     }
     .squad .card i,
-    #bookmark-player .card i {
+    #favorite-player .card i {
         top: 12px;
     }
     .squad .info i,
-    #bookmark-player .info i {
+    #favorite-player .info i {
         right: 10%;
         transform: translate(-10%, 0);
     }
 
     #competition-info .collection, 
-    #bookmarkLeague .collection {
+    #favLeague .collection {
         margin-bottom: 16px;
     }
 
     #player-info img {
-        width: 70%;
+        width: 60%;
     }
     #player-info .col:first-child {
         height: 250px;
