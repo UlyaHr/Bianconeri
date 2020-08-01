@@ -111,7 +111,7 @@ export async function playerInfo() {
 		setPlayerInfo(isPlayerAvailableOnDB);
 		const btnConfirm = document.getElementById("btn-player");
 		btnConfirm.style.backgroundColor = "#d32f2f";
-		btnConfirm.innerHTML = "<i class='material-icons left'>delete</i>";
+		btnConfirm.innerHTML = "<i class='material-icons left'>delete</i>Delete";
 		btnConfirm.onclick = () => {
 			deleteFavPlayer(isPlayerAvailableOnDB);
 			showDeleteFavoriteBtn(btnConfirm, isPlayerAvailableOnDB.name);

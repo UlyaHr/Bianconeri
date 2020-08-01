@@ -1,15 +1,15 @@
-let CACHE_NAME = 'juventus';
+let CACHE_NAME = 'bianconeri';
 let urlsToCache = [
 	'/',
 	'/index.html',
 	'/index.js',
 	'/manifest.json',
-	'/sw.js',
+	'/serviceworker.js',
 
 	//? pages files
 	'/pages/404.html',
-	'/pages/favorites.html',
 	'/pages/competition.html',
+	'/pages/favorites.html',
 	'/pages/home.html',
 	'/pages/league.html',
 	'/pages/navbar.html',
@@ -17,8 +17,8 @@ let urlsToCache = [
 	'/pages/team.html',
 
 	//? css files
-	'/css/materialize.min.css',
-	// '/css/style.css',
+	'./css/materialize.min.css',
+	'./css/style.css',
 
 	//? js files
 	'/js/api.js',
@@ -27,23 +27,23 @@ let urlsToCache = [
 	'/js/idb.js',
 	'/js/main.js',
 	'/js/materialize.min.js',
-	'/js/sw-auth.js',
 	'/js/pages.js',
+	'/js/sw-auth.js',
 
 	//? assets files
-	'assets/icon/logo-32.png',
-	'assets/icon/logo-128.png',
-	'assets/icon/logo-144.png',
-	'assets/icon/logo-192.png',
-	'assets/icon/logo-512.png',
-	'assets/icon/up.png',
-	'assets/image/404.png',
-	'assets/image/coach.svg',
-	'assets/imgae/player.svg',
-	'assets/image/hero.jpg',
-	'assets/image/navbar-bg.jpg',
-	'assets/image/Serie A.png',
-	'assets/image/UEFA Champions League.png',
+	'/assets/icon/logo-32.png',
+	'/assets/icon/logo-128.png',
+	'/assets/icon/logo-144.png',
+	'/assets/icon/logo-192.png',
+	'/assets/icon/logo-512.png',
+	'/assets/icon/up.png',
+	'/assets/image/404.png',
+	'/assets/image/coach.svg',
+	'/assets/image/hero.jpg',
+	'/assets/image/player.svg',
+	'/assets/image/Serie A.png',
+	'/assets/image/UEFA Champions League.png'
+	
 ];
 
 self.addEventListener('install', function (event) {

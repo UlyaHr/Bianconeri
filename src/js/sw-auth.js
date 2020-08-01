@@ -6,7 +6,7 @@ if ('serviceWorker' in navigator) {
 
 //! Register service worker
 function registerServiceWorker() {
-    return navigator.serviceWorker.register('sw.js')
+    return navigator.serviceWorker.register('serviceworker.js')
         .then(function (registration) {
             console.log('Service worker has been registered!');
             return registration;
