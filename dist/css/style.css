@@ -1,0 +1,571 @@
+body {
+  background-color: #fff;
+}
+
+.body-content {
+  min-height: calc(100vh - 224px);
+  margin-top: 50px;
+  color: #1f1b1b;
+}
+
+/*! PAGE NAVIGATION */
+
+nav {
+  background: #1f1b1b;
+  box-shadow: 0 5px 0 #e9536b;
+  z-index: 99;
+}
+
+nav .nav-wrapper .brand-logo img {
+  height: 32px;
+  position: relative;
+  top: 4px;
+}
+
+.sidenav-trigger {
+  font-size: 24px;
+}
+
+#nav-mobile {
+  background-image: url(../assets/image/side-logo.png);
+  background-repeat: no-repeat;
+  background-position: center 60%;
+  background-color: #1f1b1b;
+}
+
+#nav-mobile li {
+  background-color: #e9536b;
+  border-radius: 6px;
+  width: 90%;
+  margin: 15px auto 0 auto;
+}
+
+.sidenav li a,
+.topnav li a {
+  color: #fff;
+}
+
+.topnav li a:hover {
+  background-color: #e9536b;
+}
+
+/*! HOMEPAGE STYLES */
+
+.error-api h1,
+.error-api h2 {
+  font-size: 36px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width: max-content;
+  text-align: center;
+}
+
+.error-api h2 {
+  top: 55%;
+}
+
+.preloader-wrapper.big {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+}
+
+.homepage-img {
+  position: relative;
+  top: -45px;
+  background-image: url("../assets/image/hero.jpg");
+  height: calc(100vh - 50px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-text {
+  width: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-text h1 {
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 20px 0;
+  text-shadow: 0 3px 8px #1f1b1b;
+}
+
+.banner-text h4 {
+  color: #fff;
+  margin: 0 0 40px 0;
+  text-shadow: 0 3px 8px #1f1b1b;
+}
+
+.banner-text .btn-small {
+  background-color: #e9536b;
+}
+
+.banner-text i {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.banner-text a {
+  color: #fff;
+}
+
+.club-info h1,
+#competition-info h1 {
+  font-size: 24px;
+  margin: 24px 0;
+}
+
+.club-info table tr {
+  border-bottom: 1px solid #333;
+}
+
+.club-info table tr td:first-child {
+  color: #6c6c6c;
+  width: 35%;
+}
+
+.club-info table tr td:last-child {
+  font-weight: 600;
+}
+
+.club-info table tr td a {
+  color: #e9536b;
+  text-decoration: underline;
+}
+
+.club-info p {
+  margin-top: 10px;
+  text-align: right;
+  font-style: italic;
+}
+
+/*! TEAM PAGE STYLES */
+
+.coach .card-image img {
+  left: 30%;
+  width: 90%;
+}
+
+#coach-img {
+  width: 60% !important;
+}
+
+.squad,
+#favorite-player {
+  color: #1f1b1b;
+}
+
+.squad h1,
+#favorite-player h1 {
+  font-size: 36px;
+  margin: 10px 0 24px;
+}
+
+.squad .card,
+#favorite-player .card {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #1f1b1b;
+  border-radius: 5px;
+  margin: 7px 0;
+  text-align: center;
+  border-left: 5px solid #e9536b;
+  border-right: 5px solid #e9536b;
+}
+
+.squad .card .card-title,
+#favorite-player .card .card-title {
+  line-height: 20px;
+  margin: 0;
+  color: #eee;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.squad .card h2,
+#favorite-player .card h2 {
+  position: absolute;
+  bottom: -8%;
+  right: 10%;
+  color: #2f2b2b;
+}
+
+.squad .card i,
+#favorite-player .card i {
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 8px;
+}
+
+.squad .info i,
+#favorite-player .info i {
+  right: 10%;
+  transform: translate(-10%, 8px);
+}
+
+#team-squad h1 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 36px;
+  margin: 36px 0 10px;
+}
+
+#team-squad h1 i {
+  position: relative;
+  top: 5px;
+  color: #e9536b;
+  margin-right: 5px;
+}
+
+/*! PLAYER DETAIL PAGE */
+
+#player-info {
+  text-align: center;
+}
+
+#player-info .btn {
+  margin-top: 36px;
+  text-transform: inherit;
+  border-radius: 16px;
+  background-color: #4caf50;
+}
+
+#player-info .col {
+  margin-bottom: 24px;
+}
+
+#player-info .col:first-child {
+  position: relative;
+  height: 416px;
+}
+
+#player-info img {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#player-info table tr {
+  border-bottom: 1px solid #333;
+}
+
+#player-info table tr td:first-child {
+  width: 40%;
+  color: #1f1b1b;
+}
+
+#player-info table tr td:last-child {
+  color: #e9536b;
+  font-weight: 600;
+}
+
+/*! COMPETITION PAGE STYLE */
+
+#league-info h1 {
+  margin: 10px 0 36px;
+  text-align: center;
+  font-size: 32px;
+}
+
+#league-info #btn-league {
+  margin-top: 24px;
+  text-transform: inherit;
+  border-radius: 16px;
+  line-height: 36px;
+  background-color: #4caf50;
+}
+
+#league-info table {
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-bottom: 36px;
+  background-color: #1f1b1b;
+  color: #eee;
+}
+
+#league-info table thead tr th:nth-child(2),
+#league-info table tbody tr td:nth-child(2) {
+  text-align: left;
+}
+
+#league-info .card {
+  position: relative;
+  box-shadow: none;
+}
+
+#league-info .card .card-content {
+  padding: 16px 0;
+}
+
+#league-info .card .col:first-child {
+  min-height: 109px;
+  position: relative;
+}
+
+#league-info .card .card-content .card-title {
+  font-weight: 600;
+  font-size: 36px;
+}
+
+#league-info .card .card-content p {
+  color: #888;
+}
+
+#league-info .card .card-content p span {
+  color: #888;
+  margin-left: 5px;
+}
+
+#league-standing .group-standing h1 {
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #e9536b;
+}
+
+.all-competition h1 {
+  font-size: 36px;
+}
+
+.all-competition .divider {
+  margin-bottom: 36px;
+}
+
+#competition-info .collection,
+#favLeague .collection {
+  background-color: #1f1b1b;
+  border-radius: 5px;
+}
+
+#competition-info .collection .collection-item,
+#favLeague .collection .collection-item {
+  background-color: transparent;
+  position: relative;
+  border-bottom: 5px solid #e9536b;
+  padding: 18px;
+}
+
+#competition-info .collection .collection-item a,
+#favLeague .collection .collection-item a {
+  color: #eee;
+}
+
+#competition-info .collection img,
+#favLeague .collection img {
+  width: 100%;
+}
+
+#competition-info .collection .row .col:first-child,
+#favLeague .collection .row .col:first-child {
+  background: #fff;
+  border-radius: 6px;
+}
+
+#competition-info .collection .col.s9 span,
+#favLeague .collection .col.s9 span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  margin-left: 48px;
+  line-height: 1;
+}
+
+/*! FAVORITE PAGE STYLES */
+
+.favorite h1 {
+  font-size: 36px;
+}
+
+.favorite h3 {
+  font-size: 24px;
+  text-align: center;
+  color: #888;
+}
+
+.favorite .divider {
+  margin-bottom: 16px;
+}
+
+.toast {
+  background-color: #1f1b1b;
+  box-shadow: -5px 0 0 #e9536b;
+}
+
+.scrollTop {
+  width: 36px;
+  height: 36px;
+  position: fixed;
+  z-index: 100;
+  bottom: 2%;
+  right: 7%;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.scrollTop.active {
+  opacity: 1;
+  pointer-events: auto;
+  bottom: 5%;
+}
+
+.scrollTop img {
+  width: 100%;
+}
+
+/*! FOOTER STYLES */
+
+footer {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 80px;
+  color: #fff;
+  background-color: #1f1b1b;
+  box-shadow: 0 -5px 0 #e9536b;
+}
+
+footer p {
+  padding: 9px 20px;
+  margin: 0 auto;
+  line-height: 50px;
+}
+
+footer span {
+  color: #e9536b;
+  margin: 0 5px;
+}
+
+/*! MEDIA QUERY */
+
+@media only screen and (max-width: 992px) {
+  .scrollTop {
+    bottom: -1em;
+    right: 1em;
+  }
+
+  .scrollTop.active {
+    bottom: 1em;
+  }
+
+  footer p {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .error-api h1,
+  .error-api h2 {
+    font-size: 20px;
+    width: 275px;
+  }
+
+  .banner-text {
+    text-align: center;
+  }
+
+  .banner-text .col:first-child {
+    display: none;
+  }
+
+  .banner-text h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .banner-text p {
+    margin-bottom: 36px;
+  }
+
+  .club-info .collection .col.s9 span {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+
+  .club-info .collection .collection-item {
+    padding: 10px 0;
+  }
+
+  .coach .card-image img {
+    width: 80px;
+    left: 24px;
+  }
+
+  .squad .card-image img,
+  #favorite-player .card-image img {
+    width: 100px;
+  }
+
+  .squad .card,
+  #favorite-player .card {
+    padding: 12px 24px;
+  }
+
+  .squad .card-image,
+  #favorite-player .card-image {
+    position: absolute;
+    width: 65%;
+  }
+
+  .squad .card i,
+  #favorite-player .card i {
+    top: 12px;
+  }
+
+  .squad .info i,
+  #favorite-player .info i {
+    right: 10%;
+    transform: translate(-10%, 0);
+  }
+
+  #competition-info .collection,
+  #favLeague .collection {
+    margin-bottom: 16px;
+    font-size: 28px;
+  }
+
+  #player-info img {
+    width: 60%;
+  }
+
+  #player-info .col:first-child {
+    height: 250px;
+  }
+
+  #league-info .card #btn-league {
+    position: relative;
+  }
+
+  #league-info .card .card-content {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .not-found h1 {
+    font-size: 36px;
+    margin: 0 auto;
+  }
+
+  #competition-info .collection .col.s9 span,
+  #favLeague .collection .col.s9 span {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+}
