@@ -1,102 +1,92 @@
-let CACHE_NAME = 'bianconeri';
-let urlsToCache = [
-	'/',
-	'/index.html',
-	'/index.js',
-	'/manifest.json',
-	'/serviceworker.js',
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.3/workbox-sw.js');
 
-	//? pages files
-	'/pages/404.html',
-	'/pages/competition.html',
-	'/pages/favorites.html',
-	'/pages/home.html',
-	'/pages/league.html',
-	'/pages/navbar.html',
-	'/pages/player.html',
-	'/pages/team.html',
+const CACHE_DATA = [
+  { url: './', revision: '1' },
+	{ url: './index.html', revision: '1' },
+  { url: './index.js', revision: '1' },
+  { url: './manifest.json', revision: '1' },
+	{ url: './serviceworker.js', revision: '1' },
+	
+	{ url: './css/style.css', revision: '1' },
+	{ url: './css/materialize.min.css', revision: '1' },
+	{ url: './js/app.js', revision: '1' },
+	{ url: './js/materialize.min.js', revision: '1' },
+	{ url: './js/idb.js', revision: '1' },
 
-	//? css files
-	'./css/materialize.min.css',
-	'./css/style.css',
-
-	//? js files
-	'/js/api.js',
-	'/js/app.js',
-	'/js/db.js',
-	'/js/idb.js',
-	'/js/main.js',
-	'/js/materialize.min.js',
-	'/js/pages.js',
-	'/js/sw-auth.js',
-
-	//? assets files
-	'/assets/icon/ldpi.png',
-	'/assets/icon/mdpi.png',
-	'/assets/icon/hdpi.png',
-	'/assets/icon/xhdpi.png',
-	'/assets/icon/xxhdpi.png',
-	'/assets/icon/xxxhdpi.png',
-	'/assets/icon/GooglePlayStore.png',
-	'/assets/icon/iOS.png',
-	'/assets/image/404.png',
-	'/assets/image/coach.svg',
-	'/assets/image/hero.jpg',
-	'/assets/image/nav-logo.png',
-	'/assets/image/player.svg',
-	'/assets/image/side-logo.png',
-	'/assets/image/Serie A.png',
-	'/assets/image/UEFA Champions League.png',
-	'/assets/image/up.png'
+	{ url: './assets/icon/ldpi.png', revision: '1' },
+	{ url: './assets/icon/xxhdpi.png', revision: '1' },
+	{ url: './assets/icon/xxxhdpi.png', revision: '1' },
+	{ url: './assets/image/hero.jpg', revision: '1' },
+	{ url: './assets/image/nav-logo.png', revision: '1' },
+	{ url: './assets/image/Primera Division.png', revision: '1' },
+	{ url: './assets/image/UEFA Champions League.png', revision: '1' },
+	
+	{ url: './pages/404.html', revision: '1' },
+	{ url: './pages/competition.html', revision: '1' },
+	{ url: './pages/favorites.html', revision: '1' },
+	{ url: './pages/home.html', revision: '1' },
+	{ url: './pages/league.html', revision: '1' },
+	{ url: './pages/navbar.html', revision: '1' },
+	{ url: './pages/player.html', revision: '1' },
+	{ url: './pages/team.html', revision: '1' }
 ];
 
-self.addEventListener('install', function (event) {
-	event.waitUntil(
-		caches.open(CACHE_NAME)
-		.then(function (cache) {
-			return cache.addAll(urlsToCache);
+if (workbox) {
+	const { precacheAndRoute } = workbox.precaching;
+	precacheAndRoute(CACHE_DATA, { ignoreURLParametersMatching: [/.*/] });
+	registerRouteConfig();
+} else {
+	console.log(`Failed to load Workbox`);
+}
+
+//? REGISTER ROUTES
+function registerRouteConfig() {
+	const { registerRoute } = workbox.routing;
+	const { CacheFirst } = workbox.strategies;
+
+	//? Images files
+	registerRoute(
+		/\.(?:png|gif|jpg|svg)$/,
+		new CacheFirst({
+			cacheName: 'images-asset',
+			cacheExpiration: {
+				maxEntries: 50,
+				maxAgeSeconds: 14 * 24 * 30 * 30 // 14 days
+			},
 		})
 	);
-})
 
-self.addEventListener('fetch', function (event) {
-	const base_url = "https://api.football-data.org/v2/";
-	if (event.request.url.indexOf(base_url) > -1) {
-		event.respondWith(
-			caches.open(CACHE_NAME).then(function (cache) {
-				return fetch(event.request).then(function (response) {
-					cache.put(event.request.url, response.clone());
-					return response;
-				})
-			})
-		);
-	} else {
-		event.respondWith(
-			caches.match(event.request, {
-				ignoreSearch: true
-			}).then(function (response) {
-				return response || fetch(event.request);
-			})
-		)
-	}
-});
+	//? Css & js files
+	registerRoute(
+		/\.(?:js|css)$/,
+		new CacheFirst({
+			cacheName: 'css-js-asset',
+			cacheExpiration: {
+				maxEntries: 50,
+				maxAgeSeconds: 14 * 24 * 30 * 30 // 14 days
+			},
+		})
+	);
 
-self.addEventListener('activate', function (event) {
-	event.waitUntil(
-		caches.keys()
-		.then(function (cacheNames) {
-			return Promise.all(
-				cacheNames.map(function (cacheName) {
-					if (cacheName != CACHE_NAME) {
-						console.log("ServiceWorker: cache " + cacheName + " is deleted");
-						return caches.delete(cacheName);
+	//? API route
+	registerRoute(
+		({url}) => url.origin === 'https://api.football-data.org',
+		new CacheFirst({
+			cacheName: 'api-data',
+			plugins: [
+				new workbox.cacheableResponse.CacheableResponse(({
+					statuses: [0, 200, 404],
+					headers: {
+						'Access-Control-Expose-Headers': 'X-Is-Cacheable',
+						'X-Is-Cacheable': 'yes'
 					}
-				})
-			);
+				}))
+			]
 		})
 	);
-})
+}
 
+//* Push Notification
 self.addEventListener('push', function (event) {
 	let body;
 	if (event.data) {
@@ -107,8 +97,8 @@ self.addEventListener('push', function (event) {
     const title = 'Bianconeri';
 	let options = {
 		body: body,
-        icon: 'assets/icon/logo-192.png',
-        badge: 'assets/icon/logo-32.png',
+        icon: 'assets/icon/xxxhdpi.png',
+        badge: 'assets/icon/ldpi.png',
         image: 'assets/image/hero.jpg',
 		vibrate: [100, 50, 100],
 		data: {
