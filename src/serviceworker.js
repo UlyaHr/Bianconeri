@@ -17,8 +17,9 @@ const CACHE_DATA = [
 	{ url: './assets/icon/xxhdpi.png', revision: '1' },
 	{ url: './assets/icon/xxxhdpi.png', revision: '1' },
 	{ url: './assets/image/hero.jpg', revision: '1' },
-	{ url: './assets/image/nav-logo.png', revision: '1' },
-	{ url: './assets/image/Primera Division.png', revision: '1' },
+  { url: './assets/image/nav-logo.png', revision: '1' },
+  { url: './assets/image/side-logo.png', revision: '1' },
+	{ url: './assets/image/Serie A.png', revision: '1' },
 	{ url: './assets/image/UEFA Champions League.png', revision: '1' },
 	
 	{ url: './pages/404.html', revision: '1' },
