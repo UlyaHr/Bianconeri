@@ -7,8 +7,7 @@ Bianconeri makes it easier for _Juventini_ to keep updated on current team info,
 > This web app was made as a submission for IDCamp X Dicoding PWA 2020
 
 ## Live Demo
-:link: <a target="_blank" href="https://bianconeri-pwa.web.app/">Firebase</a> | 
-:link: <a target="_blank" href="https://ulyahr.github.io/">Github Pages</a>
+:link: <a target="_blank" href="https://bianconeri-pwa.web.app/">Firebase</a> 
 
 ## Technology Used
 :heavy_check_mark: Progressive Web Apps (Add to Homescreen, Splash screen, Offline Functionality)
